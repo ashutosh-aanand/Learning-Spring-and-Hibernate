@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,13 +36,14 @@ public class Instructor {
 	@JoinColumn(name="instructor_detail_id")
 	private InstructorDetail instructorDetail;
 	
-//	---------------------------new----------------------------------
-	@OneToMany(mappedBy="instructor",
+//	----------------set FetchType as lazy----------------------------------
+	@OneToMany(fetch= FetchType.LAZY,
+			mappedBy= "instructor",
 			cascade= {CascadeType.DETACH, CascadeType.MERGE,
 					CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<Course> courses;
 	
-//	---------also added convenience method at the end----------------
+//	----------------------------------------------------------------
 	
 	
 	public Instructor() {}
@@ -108,7 +110,7 @@ public class Instructor {
 				+ ", instructorDetail=" + instructorDetail + "]";
 	}
 	
-//	---------------------new---------------------------
+//	----------------------------------------------
 	// add convenience method for bi-directional relationship
 	public void addCourse(Course tempCourse) {
 		if(courses==null) {
