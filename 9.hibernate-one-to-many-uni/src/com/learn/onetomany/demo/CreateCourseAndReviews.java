@@ -26,11 +26,25 @@ public class CreateCourseAndReviews {
 			// start a transaction ------------------------------------------------------
 			session.beginTransaction();
 			
+			// create a course
+			Course tempCourse = new Course("Learn guitar in 30 days");
 			
+			// add some reviews
+			tempCourse.addReview(new Review("Thank you for making such a nice course."));
+			tempCourse.addReview(new Review("Cool job, well done."));
+			tempCourse.addReview(new Review("Average course for me."));
+			
+			// save the course .. and for saving the reviews leverage
+			// the cascade.ALL to save added reviews automatically
+			System.out.println("Saving the course: \n" + tempCourse);
+			System.out.println("Reviews: \n" + tempCourse.getReviews());
+			
+			session.save(tempCourse);
 
 			// commit transaction --------------------------------------------------------
 			session.getTransaction().commit();
 			
+			System.out.println("Done !");
 			
 		}
 		catch(Exception e) {
