@@ -26,7 +26,6 @@ public class Course {
 	 * 4. toString
 	 * 5. annotate fields
 	 */
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
