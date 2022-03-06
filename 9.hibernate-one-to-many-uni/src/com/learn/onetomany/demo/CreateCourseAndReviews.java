@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.learn.onetomany.entity.Course;
 import com.learn.onetomany.entity.Instructor;
 import com.learn.onetomany.entity.InstructorDetail;
+import com.learn.onetomany.entity.Review;
 
 public class CreateCourseAndReviews {
 
@@ -17,6 +18,7 @@ public class CreateCourseAndReviews {
 									.addAnnotatedClass(Course.class)
 									.addAnnotatedClass(Instructor.class)
 									.addAnnotatedClass(InstructorDetail.class)
+									.addAnnotatedClass(Review.class)
 									.buildSessionFactory();
 		Session session = factory.getCurrentSession();
 		
