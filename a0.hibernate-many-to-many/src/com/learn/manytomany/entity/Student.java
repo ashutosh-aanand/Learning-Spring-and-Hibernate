@@ -10,15 +10,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="student")
 public class Student {
-	/*
-	 * Steps:
-	 * 1. define fields
-	 * 2. define constructor
-	 * 3. getters and setters
-	 * 4. toString
-	 * 5. annotate fields
-	 */
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
