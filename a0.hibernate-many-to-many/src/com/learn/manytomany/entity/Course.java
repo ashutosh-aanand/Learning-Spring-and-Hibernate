@@ -43,6 +43,12 @@ public class Course {
 	@JoinColumn(name="course_id")
 	private List<Review> reviews;
 	
+//	--- new code ---
+	
+	private List<Student> students;
+	
+//	----------------
+	
 	
 	public Course() {}
 	
@@ -89,7 +95,23 @@ public class Course {
 		reviews.add(newReview);
 	}
 	
+//	---- new -----------------------------------
 	
+	public List<Student> getStudents() {
+		return students;
+	}
+	
+	// add a convenience method
+	// to add new Student to this course
+	public void addStudent(Student theStudent) {
+		if(students == null) {
+			students = new ArrayList<>();
+		}
+		
+		students.add(theStudent);
+	}
+
+//	--------------------------------------------	
 
 	@Override
 	public String toString() {
