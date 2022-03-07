@@ -1,4 +1,4 @@
-package com.learn.onetomany.entity;
+package com.learn.manytomany.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

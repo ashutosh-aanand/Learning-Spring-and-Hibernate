@@ -1,4 +1,4 @@
-package com.learn.onetomany.entity;
+package com.learn.manytomany.entity;
 
 import java.util.ArrayList;
 import java.util.List;

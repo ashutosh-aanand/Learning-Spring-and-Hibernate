@@ -1,4 +1,4 @@
-package com.learn.onetomany.entity;
+package com.learn.manytomany.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,8 @@ public class Course {
 	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="course_id")
 	private List<Review> reviews;
-
+	
+	
 	public Course() {}
 	
 	public Course(String title) {
